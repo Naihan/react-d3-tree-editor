@@ -17,6 +17,10 @@ You can dynamicly edit, create and delete chiled nodes. nodes are based on icons
 - [License](#license)
 
 
+## Demo
+- Find a demo on https://naihan.github.io/react-d3-tree-editor/
+
+
 ## Install
 
 ```bash
