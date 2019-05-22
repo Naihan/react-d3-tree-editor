@@ -192,7 +192,9 @@ export default class App extends Component {
 ## Props
 |Prop name|Mandatory|DefaultValue|Description|
 |:-|:-:|:--------:|:-|
-|treeData|true|N/A|The actual d3.tree data.<br/> you can append any data to a node and it will be avalable.<br/> Each child node should be a part of node.children array. <br/> Nodes contain an 'id' attribute which you can either manage by yourself or let the tree manage it automaticly. 
+|treeData|true|N/A|The actual d3.tree data.<br/> you can append any data to a node and it will be avalable.<br/> Each child node should be a part 
+of node.children array. <br/> Nodes contain an 'id' attribute which you can either manage by yourself or let the tree manage it automaticly. 
+|getTreeData|false|N/A|Returns the tree data
 |treeConfig| true|N/A| The d3 tree configuration
 |onRef|false|N/A|executed when the tree is first generated, the purpose of this callbact is to give the developer the tree referance for lated use
 |filterTextName|false|name|will be fired for each element once to decide which attribute be used to display the name of the element. <br/> If not implemented, the tree will assume that the 'name' attribute will be used
@@ -206,14 +208,23 @@ export default class App extends Component {
 
 Context menu is an object array that each object consist of the following properties
 
-- 'title': the title of the option that will be displayed
-- 'enabled': (bool) will it be enabled or not.
-- 'action': the action that will be executed on the tree node
+- title: the title of the option that will be displayed
+- enabled: (bool) will it be enabled or not.
+- action: the action that will be executed on the tree node
 
 
 
 ```js
-
+    [
+      {
+        title: 'Collapse All',
+        action: () => {
+            this.treeRef.collapseAllElements(e);
+            this.treeRef.update(e);
+        },
+        enabled: true
+      }
+    ]
 ```
 
 ## License
