@@ -1,0 +1,19 @@
+// {
+//     "presets": [[
+//       "@babel/preset-env", {
+//         "useBuiltIns": "entry"
+//       }],
+//       "@babel/preset-react"],
+//     "plugins": [
+//       "@babel/plugin-proposal-class-properties",
+//       "@babel/plugin-proposal-export-default-from"
+//     ]
+//   }
+{
+  "presets": [
+    "es2015",
+    "react",
+    "stage-0"
+  ],
+  "plugins": ["babel-plugin-add-module-exports"]
+}

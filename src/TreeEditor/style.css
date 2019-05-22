@@ -1,0 +1,78 @@
+
+
+.d3-context-menu {
+	position: absolute;
+	display: none;
+	background-color: #f2f2f2;
+	border-radius: 4px;
+
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	min-width: 150px;
+	border: 1px solid #d4d4d4;
+
+	z-index: 1200;
+}
+
+.d3-context-menu ul {
+	list-style-type: none;
+	margin: 4px 0px;
+	padding: 0px;
+	cursor: default;
+}
+
+.d3-context-menu ul li {
+	padding: 4px 16px;
+}
+
+.d3-context-menu ul li:hover {
+	background-color: #4677f8;
+	color: #fefefe;
+}
+
+.node {
+	cursor: pointer;
+}
+
+.node circle {
+	fill: #fff;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+
+.node text {
+	font: 10px sans-serif;
+}
+
+.link {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: .5px;
+}
+
+body {
+	overflow: hidden;
+}
+
+body>div>svg {
+	border: 1px solid black;
+}
+
+.svg-container {
+	display: inline-block;
+	position: relative;
+	height: inherit;
+	width: 100%;
+	/* padding-bottom: 60%; */
+	vertical-align: top;
+	overflow: hidden;
+	/* border: 1px solid #ccc; */
+	border-radius: 5;
+}
+
+.svg-content-responsive {
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+}
