@@ -130,7 +130,7 @@ export default class App extends Component {
       getContextMenu = (e) => {
           //will be fired on each element for attaching a context menu
           return [{
-                  title: 'add Item',
+                  title: 'Add Item',
                   action: () => {
                       this.treeRef.addNode(e, {
                           name: 'new node'
@@ -196,9 +196,7 @@ export default class App extends Component {
 ## Props
 |Prop name|Mandatory|DefaultValue|Description|
 |:-|:-:|:--------:|:-|
-|treeData|true|N/A|The actual d3.tree data.<br/> you can append any data to a node and it will be avalable.<br/> Each child node should be a part 
-of node.children array. <br/> Nodes contain an 'id' attribute which you can either manage by yourself or let the tree manage it automaticly. 
-|getTreeData|false|N/A|Returns the tree data
+|treeData|true|N/A|The actual d3.tree data.<br/> you can append any data to a node and it will be avalable.<br/> Each child node should be a part of node.children array. <br/> Nodes contain an 'id' attribute which you can either manage by yourself or let the tree manage it automaticly. 
 |treeConfig| true|N/A| The d3 tree configuration
 |onRef|false|N/A|executed when the tree is first generated, the purpose of this callbact is to give the developer the tree referance for lated use
 |filterTextName|false|name|will be fired for each element once to decide which attribute be used to display the name of the element. <br/> If not implemented, the tree will assume that the 'name' attribute will be used
@@ -233,4 +231,4 @@ Context menu is an object array that each object consist of the following proper
 
 ## License
 
-MIT © [http://github.com/Naihan/react-tree-dependancy](https://github.com/http://github.com/Naihan/react-tree-dependancy)
+MIT © [https://github.com/Naihan/react-d3-tree-editor](https://github.com/Naihan/react-d3-tree-editor)
