@@ -128,7 +128,4 @@ const config = {
     host: '0.0.0.0'
   }
 };
-
-console.log(JSON.stringify(config))
-
 module.exports = config;
