@@ -1,7 +1,8 @@
 import './overrides.css'
+// import '../src/TreeEditor/style.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TreeEditor from '../src/index'
+import TreeEditor from '../src/TreeEditor/TreeEditor';
 
 
 
@@ -9,9 +10,11 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        
+        this.state = {
+            treeCurrentData: ""
+        }
         this.treeRef = null;
-
+      
         this.treeData = {
             //the actual data
             name: 'Root Node',
@@ -140,22 +143,46 @@ class App extends React.Component {
 
         ];
     }
-
-    treeRenderedCallback = (d) => {
+    treeNodeAction = (action) => {
+        //will be fired in every tree action
+        console.log(action);
+        let { treeCurrentData } = this.state;
+        treeCurrentData =  JSON.stringify(this.treeRef.getTreeData(), null, 2);
+       
+        this.setState({
+            treeCurrentData
+            }
+        )
+    }
+    treeRenderedCallback = () => {
         //will be fired when tree finish render
+        let { treeCurrentData } = this.state;
+        treeCurrentData =  JSON.stringify(this.treeRef.getTreeData(), null, 2);
+       
+        this.setState({
+            treeCurrentData
+            }
+        )
     }
     render() {
+        console.log(this.state.treeCurrentData)
         return (
-        <TreeEditor treeData={this.treeData}
-            treeConfig={this.treeConfig}
-            onRef={ref => (this.treeRef = ref)}
-            addElementModel={this.addElementModel}
-            filterTextName={this.filterTextName}
-            contextMenuOpen={this.contextMenuOpen}
-            contextMenuClose={this.contextMenuClose}
-            selectImageLink={this.selectImageLink}
-            getContextMenu={this.getContextMenu}
-            treeRenderedCallback={this.treeRenderedCallback}/>
+            <div>
+                 <TreeEditor treeData={this.treeData}
+                    treeConfig={this.treeConfig}
+                    onRef={ref => (this.treeRef = ref)}
+                    addElementModel={this.addElementModel}
+                    filterTextName={this.filterTextName}
+                    contextMenuOpen={this.contextMenuOpen}
+                    contextMenuClose={this.contextMenuClose}
+                    selectImageLink={this.selectImageLink}
+                    getContextMenu={this.getContextMenu}
+                    treeRenderedCallback={this.treeRenderedCallback}
+                    treeNodeAction={this.treeNodeAction}/>
+
+                    <textarea rows="4" cols="50" value={this.state.treeCurrentData}></textarea>
+            </div>
+       
         )
     }
 }
