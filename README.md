@@ -205,7 +205,7 @@ export default class App extends Component {
 |selectImageLink|false|N/A|will be fired once for each element to decide the icon for that element.<br/>If not specified a default image will be presented.
 |getContextMenu|false|N/A|will be fired on each element for attaching a context menu, see Context Menu for details
 |treeRenderedCallback|false|N/A|Will be fired when tree finish render
-
+|treeNodeAction|false|N/A|will executed every time tree action occurred
 #Context Menu
 
 Context menu is an object array that each object consist of the following properties
