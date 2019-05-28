@@ -6,7 +6,8 @@
   "scripts": {
     "production": "webpack --env production --progress --colors --p",
     "build-demo": "webpack --env build-demo --progress --colors --p",
-    "dev": "webpack-dev-server --config ./webpack.config.js --content-base src --inline --hot"
+    "dev": "webpack-dev-server --config ./webpack.config.js --content-base src --inline --hot",
+    "build": "npm run production | npm run build-demo"
   },
   "repository": {
     "type": "git",

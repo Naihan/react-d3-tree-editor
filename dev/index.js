@@ -4,6 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TreeEditor from '../src/TreeEditor/TreeEditor';
 
+var req = require.context("./", false, /\.(png)$/);
+req.keys().forEach(function(key){ 
+    req(key);
+});
 
 
 class App extends React.Component {
@@ -96,7 +100,7 @@ class App extends React.Component {
 
     selectImageLink = (d) => {
         //will be fired once for each element to decide the icon for that element
-        return "http://mojedelo.webfactional.com/img/ikone/mdikona4.png"
+        return "img/sample.png"
     }
 
     getContextMenu = (e) => {
