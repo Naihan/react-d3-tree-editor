@@ -1,6 +1,6 @@
 {
   "name": "react-d3-tree-editor",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "description": "D3 tree component for React",
   "main": "lib/index.min.js",
   "scripts": {

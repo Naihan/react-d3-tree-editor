@@ -6,13 +6,8 @@ body {
     height: inherit;
 }
 #app > div {
-    height: 70%;;
-}
-#app > div > svg{
-    height: 70%;
-}
-#app > div > textarea{
-    width: 70%;
-    height: 70%;
-    
+    height: 90%;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin:1%
 }

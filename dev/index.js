@@ -25,9 +25,9 @@ class App extends React.Component {
            
             children: [
                 {
-                    name: 'b'
+                    name: 'child node',
                 },{
-                name: 'c',
+                name: 'child node',
                 children: [{
                     name: 'child node',
                     children: [{
@@ -169,7 +169,6 @@ class App extends React.Component {
         )
     }
     render() {
-        console.log(this.state.treeCurrentData)
         return (
             <div>
                  <TreeEditor treeData={this.treeData}
@@ -182,9 +181,7 @@ class App extends React.Component {
                     selectImageLink={this.selectImageLink}
                     getContextMenu={this.getContextMenu}
                     treeRenderedCallback={this.treeRenderedCallback}
-                    treeNodeAction={this.treeNodeAction}/>
-
-                    <textarea rows="4" cols="50" value={this.state.treeCurrentData}></textarea>
+                    treeNodeAction={this.treeNodeAction}/>                    
             </div>
        
         )

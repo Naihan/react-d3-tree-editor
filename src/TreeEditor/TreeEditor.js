@@ -240,26 +240,33 @@ export default class Depandancy extends React.Component {
             .on("click", this._click)
 
         //append image, if no image handler specified. default
-        nodeEnter.append("image")
+        nodeEnter.append("svg:image")
             .attr("xlink:href", d => (this.props.selectImageLink) ? this.props.selectImageLink(d) : this._defaultImage)
             .attr("width", this._imageSize)
 
         //append a circle that indicates that has children
         nodeEnter
+            .filter(d => {
+                console.log(d);
+                let currentNodeRef = this._getNodeRef(d);
+                return true;
+            })
             .append("circle")
             .attr("cx", this._svgWidth / 356)
             .attr("cy", this._svgWidth / 356)
-            .attr("r", this._svgWidth / 712)
+            .attr("r", this._svgWidth / 600)
             .style("stroke", "#2A4B7C")
+            .style("stroke-width", 1)
             .style("visibility", "hidden")
             .filter(d => {
                 return d.children || d._children
             })
-            .filter(d => {
-                return d._children
+            .style("visibility", "visible") 
+            .filter(d => { //which one to display
+                return d._children && !(d._children == d.children)
             })
             .style("fill", '#2A4B7C')
-            .style("visibility", "visible")
+            
 
 
         if (action) {
@@ -276,6 +283,11 @@ export default class Depandancy extends React.Component {
                 //append circle
                 if (circleRef.style.visibility == 'hidden')
                     circleRef.style.visibility = 'visible';
+                //set open if not
+                if (circleRef.style.fill)
+                    circleRef.style.fill = null;
+
+                
 
             }
             if (action === 'remove' || action === 'removeChildren') {
