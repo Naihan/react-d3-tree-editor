@@ -243,14 +243,11 @@ export default class Depandancy extends React.Component {
         nodeEnter.append("svg:image")
             .attr("xlink:href", d => (this.props.selectImageLink) ? this.props.selectImageLink(d) : this._defaultImage)
             .attr("width", this._imageSize)
+            .attr("x", 0)
+            .attr("y", 0)
 
         //append a circle that indicates that has children
         nodeEnter
-            .filter(d => {
-                console.log(d);
-                let currentNodeRef = this._getNodeRef(d);
-                return true;
-            })
             .append("circle")
             .attr("cx", this._svgWidth / 356)
             .attr("cy", this._svgWidth / 356)
@@ -319,8 +316,6 @@ export default class Depandancy extends React.Component {
             .style("font-size", (d) => {
                 return this._fontSize + "px"
             })
-        // .style("font-weight", "bold")
-
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
